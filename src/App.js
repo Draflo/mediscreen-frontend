@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import ListPatientComponent from './components/ListPatientComponent';
+import ListPatient from './components/ListPatient';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import HomePage from './components/HomePage';
@@ -16,7 +15,7 @@ function App() {
           <HeaderComponent />
             <div className="container">
               <Routes>
-                <Route path='/patients' element = {<ListPatientComponent/>} />
+                <Route path='/patients' element = {<ListPatient/>} />
                 <Route path='/patient/add' element = {<AddAPatientPage/>} />
                 <Route path='/patient' element = {<InformationPatient/>} />
                 <Route path='/patient/update' element = {<UpdatePatient/>} />

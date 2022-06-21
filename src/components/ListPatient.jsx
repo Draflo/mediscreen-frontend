@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function ListPatientComponent() {
+function ListPatient() {
     const [loadedPatients, setLoadedPatients] = useState([]);
 
     useEffect(() => {
@@ -66,4 +66,4 @@ function ListPatientComponent() {
     );
 }
 
-export default ListPatientComponent;
+export default ListPatient;
