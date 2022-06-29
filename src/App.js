@@ -9,6 +9,8 @@ import UpdatePatient from './pages/UpdatePatient';
 import InformationPatient from './pages/InformationPatient';
 import ListPatientHistory from './pages/ListPatientHistory';
 import InformationPatientHistory from './pages/InformationPatientHistory';
+import AddAPatientHistoryPage from './pages/AddingPatientHistory';
+import UpdateOrAddNote from './pages/UpdateOrAddNote';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
                 <Route exact path='/' element = {<HomePage/>} />
                 <Route path='/patientHistoryList' element = {<ListPatientHistory/>} />
                 <Route path='/patientHistory' element = {<InformationPatientHistory/>} />
+                <Route path='/patientHistory/add' element = {<AddAPatientHistoryPage/>} />
+                <Route path='/patientHistory/update' element = {<UpdateOrAddNote/>} />
               </Routes>
             </div>
           <FooterComponent />

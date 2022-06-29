@@ -21,7 +21,7 @@ function InformationPatientHistory() {
             });
     }, []);
     console.log(loadedPatientHistory.notes);
-    
+
 
     return (
         <div>
@@ -31,25 +31,34 @@ function InformationPatientHistory() {
                         <h3 className='text-center'>Patient's Informations</h3>
                         <div className='card-body'>
                             <div className='form-group'>
-                                <label htmlFor='fistname'> First Name: </label>
-                                {loadedPatientHistory.firstName}
+                                <label htmlFor='fistname'> First Name : </label>
+                                <span>   {loadedPatientHistory.firstName}</span>
                             </div>
                             <div className='form-group'>
-                                <label htmlFor="lastname"> Last Name: </label>
-                                {loadedPatientHistory.lastName}
+                                <label htmlFor="lastname"> Last Name : </label>
+                                <span>   {loadedPatientHistory.lastName}</span>
                             </div>
                             <div className='form-group'>
-                                <label htmlFor="notes"> Notes: </label>
-                                {loadedNotes.map(
-                                    (notes, creationDate) => {
-                                        return <ol key={creationDate}>
-                                            <ul>
-                                            <li>{notes.note}</li>
-                                            <li>{notes.creationDate}</li>
-                                            </ul>
-                                        </ol>
-                                    }
-                                )}
+                                <label htmlFor="notes"> Notes : </label>
+                                {loadedNotes.sort(
+                                    (a, b) => a.creationDate > b.creationDate ? 1 : -1).map(
+                                        (notes, creationDate) => {
+                                            return <ol key={creationDate}>
+                                                <ul>
+                                                    <li>{notes.creationDate}</li>
+                                                    <li>{notes.note}</li>
+                                                </ul>
+                                            </ol>
+                                        }
+                                    )}
+                            </div>
+                            <div>
+                                <Link to={`/patientHistory/update?firstName=${loadedPatientHistory.firstName}&lastName=${loadedPatientHistory.lastName}`}>
+                                    <button className='btn btn-success'>Update or Add Note</button>
+                                </Link>
+                                <Link to='/patientHistoryList'>
+                                    <button className="btn btn-primary">Return</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

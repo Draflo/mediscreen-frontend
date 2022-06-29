@@ -42,8 +42,8 @@ function ListPatientHistory() {
                                     <Link to={`/patientHistory?firstName=${patientsHistory.firstName}&lastName=${patientsHistory.lastName}`}>
                                         <button className='btn btn-primary'>View</button>
                                     </Link>
-                                    <Link to={`/patient/update?firstName=${patientsHistory.firstName}&lastName=${patientsHistory.lastName}`}>
-                                        <button className='btn btn-success'>Update</button>
+                                    <Link to={`/patientHistory/update?firstName=${patientsHistory.firstName}&lastName=${patientsHistory.lastName}`}>
+                                        <button className='btn btn-success'>Update or Add Note</button>
                                     </Link>
                                 </td>
                             </tr>
