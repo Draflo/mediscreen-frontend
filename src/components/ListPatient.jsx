@@ -35,7 +35,6 @@ function ListPatient() {
                             <th>Actions</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         {loadedPatients.map(
                             (patient, id) => {

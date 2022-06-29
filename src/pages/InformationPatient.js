@@ -24,12 +24,12 @@ function InformationPatient() {
             <div className='container'>
                 <div className='row'>
                     <div className='card col-md-6 offset-md-3'>
-                        <h3 className='text-center'>Update Patient</h3>
+                        <h3 className='text-center'>Patient's Informations</h3>
                         <div className='card-body'>
                             <div className='form-group'>
                                 <h4>{ }</h4>
                                 <label htmlFor='fistname'> First Name: </label>
-                                <span>{loadedPatient.firstName}</span>
+                                {loadedPatient.firstName}
                             </div>
                             <div className='form-group'>
                                 <label htmlFor="lastname"> Last Name: </label>
