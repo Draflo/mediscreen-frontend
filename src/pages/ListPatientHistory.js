@@ -1,24 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
-function ListPatient() {
-    const [loadedPatients, setLoadedPatients] = useState([]);
+function ListPatientHistory() {
+    const [loadedPatientHistory, setLoadedPatientHistory] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8081/patients')
+        fetch('http://localhost:8082/allPatientHistory')
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                setLoadedPatients(data);
+                setLoadedPatientHistory(data);
             });
     }, []);
 
     return (
         <div>
-            <h2 className='text-center'>Patients List</h2>
+            <h2 className='text-center'>Patient History List</h2>
             <div className='row row-button'>
-                <Link to='/patient/add'>
+                <Link to='/patientHistory/add'>
                     <button className='btn btn-primary'>Add A New Patient</button>
                 </Link>
             </div>
@@ -28,28 +28,21 @@ function ListPatient() {
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Birthdate</th>
-                            <th>Sex</th>
-                            <th>Address</th>
-                            <th>Phone</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
+
                     <tbody>
-                        {loadedPatients.map(
-                            (patient, id) => {
-                                return <tr key={id}>
-                                <td>{patient.firstName}</td>
-                                <td>{patient.lastName}</td>
-                                <td>{patient.birthdate}</td>
-                                <td>{patient.sex}</td>
-                                <td>{patient.address}</td>
-                                <td>{patient.phone}</td>
+                        {loadedPatientHistory.map(
+                            (patientsHistory, patientId) => {
+                                return <tr key={patientId}>
+                                <td>{patientsHistory.firstName}</td>
+                                <td>{patientsHistory.lastName}</td>
                                 <td>
-                                    <Link to={`/patient?firstName=${patient.firstName}&lastName=${patient.lastName}`}>
+                                    <Link to={`/patientHistory?firstName=${patientsHistory.firstName}&lastName=${patientsHistory.lastName}`}>
                                         <button className='btn btn-primary'>View</button>
                                     </Link>
-                                    <Link to={`/patient/update?firstName=${patient.firstName}&lastName=${patient.lastName}`}>
+                                    <Link to={`/patient/update?firstName=${patientsHistory.firstName}&lastName=${patientsHistory.lastName}`}>
                                         <button className='btn btn-success'>Update</button>
                                     </Link>
                                 </td>
@@ -63,6 +56,7 @@ function ListPatient() {
             </div>
         </div>
     );
+
 }
 
-export default ListPatient;
+export default ListPatientHistory;

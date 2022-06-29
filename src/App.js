@@ -7,6 +7,8 @@ import HomePage from './components/HomePage';
 import AddAPatientPage from './pages/AddingPatient';
 import UpdatePatient from './pages/UpdatePatient';
 import InformationPatient from './pages/InformationPatient';
+import ListPatientHistory from './pages/ListPatientHistory';
+import InformationPatientHistory from './pages/InformationPatientHistory';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
                 <Route path='/patient' element = {<InformationPatient/>} />
                 <Route path='/patient/update' element = {<UpdatePatient/>} />
                 <Route exact path='/' element = {<HomePage/>} />
+                <Route path='/patientHistoryList' element = {<ListPatientHistory/>} />
+                <Route path='/patientHistory' element = {<InformationPatientHistory/>} />
               </Routes>
             </div>
           <FooterComponent />
