@@ -11,6 +11,9 @@ import ListPatientHistory from './pages/ListPatientHistory';
 import InformationPatientHistory from './pages/InformationPatientHistory';
 import AddAPatientHistoryPage from './pages/AddingPatientHistory';
 import UpdateOrAddNote from './pages/UpdateOrAddNote';
+import DiabetesEvaluation from './pages/DiabetesEvaluation';
+import DiabetesEvaluationId from './pages/DiabetesEvaluationId';
+import DiabetesEvaluationForm from './components/DiabetesEvaluationForm';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
                 <Route path='/patientHistory' element = {<InformationPatientHistory/>} />
                 <Route path='/patientHistory/add' element = {<AddAPatientHistoryPage/>} />
                 <Route path='/patientHistory/update' element = {<UpdateOrAddNote/>} />
+                <Route path='/diabetesEvaluation' element = {<DiabetesEvaluation/>} />
+                <Route path='/diabetesEvaluation/id' element = {<DiabetesEvaluationId/>} />
+                <Route path='/diabetesEvaluation/form' element = {<DiabetesEvaluationForm/>} />
               </Routes>
             </div>
           <FooterComponent />
