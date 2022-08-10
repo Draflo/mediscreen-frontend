@@ -16,7 +16,7 @@ function HeaderComponent() {
                         <Link to='/patientHistoryList'>Patient's History List</Link>
                     </li>
                     <li>
-                        <Link to='diabetesEvaluation'>Diabetes Evaluation</Link>
+                        <Link to='diabetesEvaluation/form'>Diabetes Evaluation</Link>
                     </li>
                 </ul>
             </nav>
